@@ -23,6 +23,7 @@ abstract class ChannelsSenderModels
      * @property string|null $verificationMethod The verification method.
      * @property string|null $verificationCode The verification code.
      * @property string|null $voiceApplicationSid The SID of the Twilio Voice application.
+     * @property string|null $accountType The account type for ISV Account Type Migration. Set to 'ISV' or 'ISVSubAccount' to configure, null or empty string to clear, or omit to preserve the existing value.
     */
     public static function createMessagingV2ChannelsSenderConfiguration(array $payload = []): MessagingV2ChannelsSenderConfiguration
     {
@@ -92,16 +93,19 @@ class MessagingV2ChannelsSenderConfiguration implements \JsonSerializable
      * @property string|null $verificationMethod The verification method.
      * @property string|null $verificationCode The verification code.
      * @property string|null $voiceApplicationSid The SID of the Twilio Voice application.
+     * @property string|null $accountType The account type for ISV Account Type Migration. Set to 'ISV' or 'ISVSubAccount' to configure, null or empty string to clear, or omit to preserve the existing value.
     */
         protected $wabaId;
         protected $verificationMethod;
         protected $verificationCode;
         protected $voiceApplicationSid;
+        protected $accountType;
     public function __construct(array $payload = []) {
         $this->wabaId = Values::array_get($payload, 'waba_id');
         $this->verificationMethod = Values::array_get($payload, 'verification_method');
         $this->verificationCode = Values::array_get($payload, 'verification_code');
         $this->voiceApplicationSid = Values::array_get($payload, 'voice_application_sid');
+        $this->accountType = Values::array_get($payload, 'account_type');
     }
 
     public function toArray(): array
@@ -124,6 +128,9 @@ class MessagingV2ChannelsSenderConfiguration implements \JsonSerializable
         }
         if (isset($this->voiceApplicationSid)) {
             $jsonString['voice_application_sid'] = $this->voiceApplicationSid;
+        }
+        if (isset($this->accountType)) {
+            $jsonString['account_type'] = $this->accountType;
         }
         return $jsonString;
     }
