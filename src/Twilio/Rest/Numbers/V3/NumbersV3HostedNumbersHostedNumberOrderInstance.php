@@ -28,49 +28,27 @@ use Twilio\Base\PhoneNumberCapabilities;
 
 /**
  * @property string|null $sid
- *//**
  * @property string|null $accountSid
- *//**
  * @property string|null $incomingPhoneNumberSid
- *//**
  * @property string|null $addressSid
- *//**
  * @property string|null $signingDocumentSid
- *//**
  * @property string|null $phoneNumber
- *//**
  * @property PhoneNumberCapabilities|null $capabilities
- *//**
  * @property string|null $friendlyName
- *//**
  * @property string|null $uniqueName
- *//**
  * @property string $status
- *//**
  * @property string|null $failureReason
- *//**
  * @property \DateTime|null $dateCreated
- *//**
  * @property \DateTime|null $dateUpdated
- *//**
  * @property int $verificationAttempts
- *//**
  * @property string|null $email
- *//**
  * @property string[]|null $ccEmails
- *//**
  * @property string|null $url
- *//**
  * @property string $verificationType
- *//**
  * @property string|null $verificationDocumentSid
- *//**
  * @property string|null $extension
- *//**
  * @property int $callDelay
- *//**
  * @property string|null $verificationCode
- *//**
  * @property string[]|null $verificationCallSids
  */
 class NumbersV3HostedNumbersHostedNumberOrderInstance extends InstanceResource
@@ -89,28 +67,28 @@ class NumbersV3HostedNumbersHostedNumberOrderInstance extends InstanceResource
         // Marshaled Properties
         $this->properties = [
             'sid' => Values::array_get($payload, 'sid'),
-            'accountSid' => Values::array_get($payload, 'account_sid'),
-            'incomingPhoneNumberSid' => Values::array_get($payload, 'incoming_phone_number_sid'),
-            'addressSid' => Values::array_get($payload, 'address_sid'),
-            'signingDocumentSid' => Values::array_get($payload, 'signing_document_sid'),
-            'phoneNumber' => Values::array_get($payload, 'phone_number'),
+            'accountSid' => Values::array_get($payload, 'accountSid'),
+            'incomingPhoneNumberSid' => Values::array_get($payload, 'incomingPhoneNumberSid'),
+            'addressSid' => Values::array_get($payload, 'addressSid'),
+            'signingDocumentSid' => Values::array_get($payload, 'signingDocumentSid'),
+            'phoneNumber' => Values::array_get($payload, 'phoneNumber'),
             'capabilities' => Deserialize::phoneNumberCapabilities(Values::array_get($payload, 'capabilities')),
-            'friendlyName' => Values::array_get($payload, 'friendly_name'),
-            'uniqueName' => Values::array_get($payload, 'unique_name'),
+            'friendlyName' => Values::array_get($payload, 'friendlyName'),
+            'uniqueName' => Values::array_get($payload, 'uniqueName'),
             'status' => Values::array_get($payload, 'status'),
-            'failureReason' => Values::array_get($payload, 'failure_reason'),
-            'dateCreated' => Deserialize::dateTime(Values::array_get($payload, 'date_created')),
-            'dateUpdated' => Deserialize::dateTime(Values::array_get($payload, 'date_updated')),
-            'verificationAttempts' => Values::array_get($payload, 'verification_attempts'),
+            'failureReason' => Values::array_get($payload, 'failureReason'),
+            'dateCreated' => Deserialize::dateTime(Values::array_get($payload, 'dateCreated')),
+            'dateUpdated' => Deserialize::dateTime(Values::array_get($payload, 'dateUpdated')),
+            'verificationAttempts' => Values::array_get($payload, 'verificationAttempts'),
             'email' => Values::array_get($payload, 'email'),
-            'ccEmails' => Values::array_get($payload, 'cc_emails'),
+            'ccEmails' => Values::array_get($payload, 'ccEmails'),
             'url' => Values::array_get($payload, 'url'),
-            'verificationType' => Values::array_get($payload, 'verification_type'),
-            'verificationDocumentSid' => Values::array_get($payload, 'verification_document_sid'),
+            'verificationType' => Values::array_get($payload, 'verificationType'),
+            'verificationDocumentSid' => Values::array_get($payload, 'verificationDocumentSid'),
             'extension' => Values::array_get($payload, 'extension'),
-            'callDelay' => Values::array_get($payload, 'call_delay'),
-            'verificationCode' => Values::array_get($payload, 'verification_code'),
-            'verificationCallSids' => Values::array_get($payload, 'verification_call_sids'),
+            'callDelay' => Values::array_get($payload, 'callDelay'),
+            'verificationCode' => Values::array_get($payload, 'verificationCode'),
+            'verificationCallSids' => Values::array_get($payload, 'verificationCallSids'),
         ];
 
         $this->solution = [];
@@ -147,5 +125,3 @@ class NumbersV3HostedNumbersHostedNumberOrderInstance extends InstanceResource
         return '[Twilio.Numbers.V3.NumbersV3HostedNumbersHostedNumberOrderInstance]';
     }
 }
-
-
