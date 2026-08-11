@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: Setup PHP Action
-        uses: shivammathur/setup-php@2.15.0
+        uses: shivammathur/setup-php@2.37.1
         with:
           php-version: ${{ matrix.php }}
           coverage: xdebug
